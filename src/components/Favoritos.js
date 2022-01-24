@@ -3,11 +3,20 @@ import { useParams } from 'react-router-dom';
 
 
 export const Favoritos = () => {
-    const{Favo}=useParams();
-    console.log(Favo);
-    const favo=[];
-    favo.push(Favo);
-    console.log(favo);
+   
+    const [movie, setMovie] = useState([]);
+    console.log(movie);
+    	
+    useEffect(() => {
+		const movieFavourites = JSON.parse(
+			localStorage.getItem('react-movie-app-favourites')
+		);
+
+		if (movieFavourites) {
+			setMovie(movieFavourites);
+		}
+	}, []);
+
     return(
         <div><h1>{favo} Holaaaa</h1></div>
 
