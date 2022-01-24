@@ -10,12 +10,12 @@ export const FilmGridItem = ({Title,Year,Poster,imdbID}) => {
     //     setFavo(cats=>[...cats,Title]);
     //     console.log(favo);
     // }
-    const [favourites, setFavourites] = useState([]);
+    const [favourites, setFavourites] = useState([{Title:''}]);
     const saveToLocalStorage = (items) => {
 		localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
 	};
     const addFavouriteMovie = () => {
-		const newFavouriteList = [...favourites, Title];
+		const newFavouriteList = [...favourites, {Title:Title}];
 		setFavourites(newFavouriteList);
 		saveToLocalStorage(newFavouriteList);
 	};

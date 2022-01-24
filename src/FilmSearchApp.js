@@ -71,7 +71,7 @@ export const FilmSearchApp = () => {
               }>
 
               </Route>
-              <Route path="/Favoritos/" element={<Favoritos/>}>
+              <Route path="/Favoritos/:id" element={<Favoritos/>}>
               </Route>
               <Route path="/FilmInfo/:id" element={<FilmInfo/>}>
               </Route> 
