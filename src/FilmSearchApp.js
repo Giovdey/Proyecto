@@ -73,7 +73,7 @@ export const FilmSearchApp = () => {
               
             </form>
             </div>
-            <Routes>
+            <Routes basename="/Proyecto">
               <Route path="/" element={
                 <div>
                   
