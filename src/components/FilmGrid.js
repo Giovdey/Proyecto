@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { FilmGridItem } from './FilmGridItem';
 import { useFetchFilm } from '../hooks/useFetchFilm';
 
@@ -6,7 +6,20 @@ import { useFetchFilm } from '../hooks/useFetchFilm';
 export const FilmGrid = ({category}) => {
 
     const {data: poster, loading} =useFetchFilm(category);
-       
+
+    const [favourites, setFavourites] = useState([]);
+
+    const saveToLocalStorage = (items) => {
+		localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+	};
+    const addFavouriteMovie = (Title) => {
+		const newFavouriteList = [...favourites, {title:Title}];
+        console.log(newFavouriteList)
+        
+		setFavourites(newFavouriteList);
+        saveToLocalStorage(newFavouriteList);
+	};
+  
     return (
         <>
             {/* <h3 class='card animate__animated animate__fadeIn'>{ category }</h3> */}
@@ -17,8 +30,10 @@ export const FilmGrid = ({category}) => {
                         <FilmGridItem
                             key={movie.Title}
                             {...movie}
-                            
+                            addFavouriteMovie={addFavouriteMovie}
                         />
+                        
+                        
                     ))
                 }
             </div>

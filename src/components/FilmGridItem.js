@@ -2,23 +2,7 @@ import React,{useState} from 'react'
 import { Favoritos } from './Favoritos';
 
 
-export const FilmGridItem = ({Title,Year,Poster,imdbID}) => {
-    // const [favo, setFavo] = useState([]);
-    
-    // const handleSubmit=()=>{
-        
-    //     setFavo(cats=>[...cats,Title]);
-    //     console.log(favo);
-    // }
-    const [favourites, setFavourites] = useState([]);
-    const saveToLocalStorage = (items) => {
-		localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
-	};
-    const addFavouriteMovie = () => {
-		const newFavouriteList = [...favourites, Title];
-		setFavourites(newFavouriteList);
-		saveToLocalStorage(newFavouriteList);
-	};
+export const FilmGridItem = ({Title,Year,Poster,imdbID,addFavouriteMovie}) => {
 
     
     return (
@@ -32,7 +16,12 @@ export const FilmGridItem = ({Title,Year,Poster,imdbID}) => {
             <p class="card-subtitle mb-2 text-muted">{Year}</p>
             
             <a class="btn btn-primary" href={`/FilmInfo/${imdbID}`}>+Info</a>
-            <a class="btn btn-primary" onClick={addFavouriteMovie}>+Add</a>
+            <a class="btn btn-primary" onClick={()=>addFavouriteMovie(Title)}>+Add</a>
+            {/* <Favoritos
+                 movies={movies}
+                 handleFavouritesClick={addFavouriteMovie}
+					
+            /> */}
 
         </div>
        

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { AddCategory } from './components/AddCategory';
 import { FilmGrid } from './components/FilmGrid';
 import { BrowserRouter,Route,Routes} from 'react-router-dom';
@@ -10,7 +10,16 @@ export const FilmSearchApp = () => {
     
     const [categories,setCategories]= 
                         useState(['Jocker']);
-    
+    const [movie, setMovie] = useState([]);
+    useEffect(() => {
+		const movieFavourites = JSON.parse(
+			localStorage.getItem('react-movie-app-favourites')
+		);
+      
+		if (movieFavourites) {
+			setMovie(movieFavourites);
+		}
+	}, []);
     // const handleAdd=()=>{
     //     // setCategories([...categories,'Attack on Titan']);
     //     setCategories(cats=>['Attack on Titan',...categories]);
@@ -61,7 +70,7 @@ export const FilmSearchApp = () => {
                             <FilmGrid
                                 key={category}
                                 category={ category }
-        
+                                
                             />
                         ))
                     }
@@ -71,7 +80,13 @@ export const FilmSearchApp = () => {
               }>
 
               </Route>
-              <Route path="/Favoritos/" element={<Favoritos/>}>
+              <Route path="/Favoritos/" element={<ol>
+                    {
+                        movie.map((category)=>(
+                            <h1>{category.title}</h1>
+                        ))
+                    }
+                </ol>}>
               </Route>
               <Route path="/FilmInfo/:id" element={<FilmInfo/>}>
               </Route> 
