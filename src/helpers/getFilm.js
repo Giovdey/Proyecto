@@ -6,6 +6,7 @@ export const getFilm=async(category)=>{
     
     const film= data.Search.map((movie)=>{
         return{
+            
             Title: movie.Title,
             Year: movie.Year,
             Poster: movie.Poster,

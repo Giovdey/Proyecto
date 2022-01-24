@@ -19,7 +19,8 @@ export const getFilmInfo=async(imdbID)=>{
             Language:data.Language,
             Country:data.Country,
             Awards:data.Awards,
-            Poster: data.Poster
+            Poster: data.Poster,
+            imdbID: data.imdbID
             
         }
     };
