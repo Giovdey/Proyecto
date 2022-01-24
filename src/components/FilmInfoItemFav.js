@@ -4,7 +4,7 @@ export const FilmInfoItemFav = ({Title,Year,Poster,imdbID,addFavouriteMovie,Hear
     const Whiteheart='🤍';
     const Blackheart='🖤';
     Heart=Fav.includes(imdbID) ? Blackheart:Whiteheart
-    //jdjfjfk
+    
     return (
         
         <div class="card" >
