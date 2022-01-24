@@ -13,7 +13,7 @@ export const FilmInfoItemFav = ({Title,Year,Poster,imdbID,addFavouriteMovie,Hear
             <p class="card-title" >{Title}</p>
             <p class="card-subtitle mb-2 text-muted">{Year}</p>
             <i class="bi bi-bookmark-heart" onClick={()=>addFavouriteMovie(imdbID)}>{Heart}</i>
-            <a class="btn btn-primary" href={`/FilmInfo/${imdbID}`}>+Info</a>
+            <a class="btn btn-primary" href={`/Proyecto/FilmInfo/${imdbID}`}>+Info</a>
             
         {/* <Favoritos
              movies={movies}

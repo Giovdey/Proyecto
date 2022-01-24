@@ -58,10 +58,10 @@ export const FilmSearchApp = () => {
             <a class="navbar-brand" href="#">Film App</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/Proyecto">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/Favoritos">Favoritos</a>
+                  <a class="nav-link" href="/Proyecto/Favoritos">Favoritos</a>
                   
                 </li>
                 
@@ -73,8 +73,8 @@ export const FilmSearchApp = () => {
               
             </form>
             </div>
-            <Routes basename="/Proyecto">
-              <Route path="/" element={
+            <Routes >
+              <Route path="/Proyecto" element={
                 <div>
                   
                   
@@ -111,7 +111,7 @@ export const FilmSearchApp = () => {
               }>
 
               </Route>
-              <Route path="/Favoritos/" element={<Favoritos addFavouriteMovie={addFavouriteMovie}/>
+              <Route path="/Proyecto/Favoritos/" element={<Favoritos addFavouriteMovie={addFavouriteMovie}/>
                 // <ol>
                 //     {
                 //         movie.map((category)=>(
@@ -121,7 +121,7 @@ export const FilmSearchApp = () => {
                 // </ol>
               }>
               </Route>
-              <Route path="/FilmInfo/:id" element={<FilmInfo/>}>
+              <Route path="/Proyecto/FilmInfo/:id" element={<FilmInfo/>}>
               </Route> 
             
             </Routes>

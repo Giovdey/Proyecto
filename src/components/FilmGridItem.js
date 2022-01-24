@@ -19,7 +19,7 @@ export const FilmGridItem = ({Title,Year,Poster,imdbID,addFavouriteMovie,Heart})
             <p class="card-title" >{Title}</p>
             <p class="card-subtitle mb-2 text-muted">{Year}</p>
             <i class="bi bi-bookmark-heart" onClick={()=>addFavouriteMovie(imdbID)}>{Heart}</i>
-            <a class="btn btn-primary"  href={`/FilmInfo/${imdbID}`}>+Info</a>
+            <a class="btn btn-primary"  href={`/Proyecto/FilmInfo/${imdbID}`}>+Info</a>
             
             
             {/* <Favoritos
