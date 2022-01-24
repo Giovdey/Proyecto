@@ -15,11 +15,7 @@ export const FilmInfoItemFav = ({Title,Year,Poster,imdbID,addFavouriteMovie,Hear
             <i class="bi bi-bookmark-heart" onClick={()=>addFavouriteMovie(imdbID)}>{Heart}</i>
             <a class="btn btn-primary" href={`/Proyecto/FilmInfo/${imdbID}`}>+Info</a>
             
-        {/* <Favoritos
-             movies={movies}
-             handleFavouritesClick={addFavouriteMovie}
-                
-        /> */}
+        
         </div>
     )
   };
